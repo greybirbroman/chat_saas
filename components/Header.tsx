@@ -1,15 +1,30 @@
-import React from 'react';
+import Link from 'next/link';
 import Logo from './Logo';
 import DarkModeButton from './DarkModeButton';
 import ProfileButton from './ProfileButton';
-const Header = () => {
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/auth';
+import { MessagesSquare } from 'lucide-react';
+
+const Header = async () => {
+const session = await getServerSession(authOptions)
+console.log(session)
   return (
     <header className='sticky top-0 bg-slate-300 dark:bg-gray-900'>
       <nav className='flex flex-col sm:flex-row items-center p-5 bg-slate-300 dark:bg-gray-900 max-w-7xl mx-auto'>
         <Logo />
         <div className='flex-1 flex items-center justify-end gap-4'>
+          {session ? (
+            <>
+            <Link href='/chat' prefetch={false}>
+              <MessagesSquare className=''/>
+            </Link>
+            </>
+          ) : (
+            <Link href='/pricing'>Pricing</Link>
+          )}
           <DarkModeButton />
-          <ProfileButton/>
+          <ProfileButton session={session}/>
         </div>
       </nav>
     </header>

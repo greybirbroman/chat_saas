@@ -1,3 +1,4 @@
+import { Session } from 'next-auth';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,7 +9,11 @@ import {
 } from '@/components/ui/dropdown-menu';
 import UserAvatar from './UserAvatar';
 
-const ProfileButton = () => {
+type SessionProps = {
+    session: Session | null
+}
+
+const ProfileButton = ({ session }: SessionProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
