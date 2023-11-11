@@ -7,8 +7,11 @@ import { authOptions } from '@/auth';
 import { MessagesSquare } from 'lucide-react';
 
 const Header = async () => {
+
 const session = await getServerSession(authOptions)
+
 console.log(session)
+
   return (
     <header className='sticky top-0 bg-slate-300 dark:bg-gray-900'>
       <nav className='flex flex-col sm:flex-row items-center p-5 bg-slate-300 dark:bg-gray-900 max-w-7xl mx-auto'>
