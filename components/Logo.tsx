@@ -12,8 +12,9 @@ const Logo = () => {
             priority
             src={LogoImage}
             alt='Logo, Image'
-            className='dark:filter'
+            className='dark:filter invert'
           />
+          <p>Chat with Anyone</p>
         </AspectRatio>
       </div>
     </Link>

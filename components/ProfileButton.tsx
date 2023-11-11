@@ -26,7 +26,7 @@ const ProfileButton = ({ session }: SessionProps) => {
   }
 
   return (
-    session && (
+    session.user && (
       <DropdownMenu>
         <DropdownMenuTrigger>
           <UserAvatar name={session.user?.name} image={session.user?.image} />

@@ -8,7 +8,7 @@ interface IUserAvatar {
   className?: string;
 }
 
-const splitUserName = (name: string) => {
+const splitUserName = (name: string | null | undefined) => {
   return name
     ?.split(' ')
     .map((n) => n[0])
@@ -20,8 +20,8 @@ const UserAvatar = ({ name, image, className }: IUserAvatar) => {
     <Avatar className={cn('bg-white text-gray-900', className)}>
       {image && (
         <Image
-          src={image}
-          alt={name}
+          src={image || ''}
+          alt={name || ''}
           width={40}
           height={40}
           className='rounded-full'

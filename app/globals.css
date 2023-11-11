@@ -36,7 +36,7 @@
   }
  
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 221 39.29% 10.98%;
     --foreground: 210 40% 98%;
  
     --card: 222.2 84% 4.9%;
@@ -62,7 +62,7 @@
  
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 260 30% 50%;
   }
 }
  
@@ -72,5 +72,18 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-03 {
+    position: absolute;
+    width: 404px;
+    height: 800px;
+    left: 20%;
+    top: 5%;
+    background: rgba(149, 66, 232, 0.35);
+    filter: blur(175px);
+    transform: rotate(-114.2deg);
   }
 }
