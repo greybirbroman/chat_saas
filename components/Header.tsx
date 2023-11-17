@@ -11,7 +11,7 @@ const Header = async () => {
 
 const session = await getServerSession(authOptions)
 
-console.log(session)
+console.log('Header call session >>>', session)
 
   return (
     <header className='sticky top-0 bg-white/50 dark:bg-gray-900 z-50'>

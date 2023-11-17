@@ -1,6 +1,7 @@
 import { CheckIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from './ui/button';
+import CheckoutButton from './CheckoutButton';
 
 interface IPricingCard {
   redirect?: boolean;
@@ -63,7 +64,7 @@ const PricingCard = ({
           </Button>
         </Link>
       ) : (
-        priceMonthly && <Button className='bg-red-200 text-red-400'></Button>
+        priceMonthly && <CheckoutButton />
       )}
     </div>
   );
